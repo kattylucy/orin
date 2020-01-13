@@ -1,9 +1,6 @@
 import * as actionTypes from './actions/actionsTypes';
 
 const initialState = {
-    inputValue:'',
-    itemAmount:0,
-    categoryValue:'',
     income:[],
     savings:[],
     bills:[],
@@ -13,49 +10,39 @@ const initialState = {
     totalBills: 0,
     totalExpenses:0,
     totalMoney:0,
-    itemName:'',
 }
 
 
 const reducer = (state = initialState, action) => {
-    let number = Number(state.itemAmount);
-    const obj = {'name': state.inputValue, 'amount': number, 'id':state.inputValue}
 
     switch(action.type){
-        case actionTypes.GET_INPUT_VALUE:
-            return{
-                ...state,
-                inputValue: action.value,
-            }
-        case actionTypes.GET_AMOUNT_VALUE:
-            return{
-                ...state,
-                itemAmount: action.value
-            }
         case actionTypes.ADD_TO_INCOME:
+            const income = action.payload;
             return{
                 ...state,
-                income: [...state.income, obj],
-                totalIncome: number + state.income.reduce(function(prev, next){return prev + next.amount}, 0),
+                income: state.income.concat(income),
+                totalIncome: income.amount + state.income.reduce(function(prev, next){return prev + next.amount}, 0),
             }
         case actionTypes.ADD_TO_SAVINGS:
+            const savings = action.payload;
             return{
                 ...state,
-                savings: [...state.savings, obj],
-                totalSavings: number + state.savings.reduce(function(prev, next){return prev + next.amount}, 0),
+                savings: state.savings.concat(savings),
+                totalSavings: savings.amount + state.savings.reduce(function(prev, next){return prev + next.amount}, 0),
             }
         case actionTypes.ADD_TO_BILLS:
-            console.log(state.inputValue)
+             const bills = action.payload;
             return{
                 ...state,
-                bills: [...state.bills, obj],
-                totalBills: number + state.bills.reduce(function(prev, next){return prev + next.amount}, 0),
+                bills: state.bills.concat(bills),
+                totalBills: bills.amount + state.bills.reduce(function(prev, next){return prev + next.amount}, 0),
             }
         case actionTypes.ADD_TO_EXPENSES:
+            const expenses = action.payload;
             return{
                 ...state,
-                expenses: [...state.expenses, obj],
-                totalExpenses: number + state.expenses.reduce(function(prev, next){return prev + next.amount}, 0),
+                expenses: state.expenses.concat(expenses),
+                totalExpenses: expenses.amount + state.expenses.reduce(function(prev, next){return prev + next.amount}, 0),
             }
         case actionTypes.DELETE_ITEM_INCOME:
             const newArrIncome = state.income.filter(item => item.id !== action.value);
@@ -80,6 +67,14 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 savings: newArrSavings,
                 totalSavings: totalSavings
+            }
+        case actionTypes.DELETE_ITEM_EXPENSES:
+                const newArrExpenses = state.expenses.filter(item => item.id !== action.value);
+                const totalExpenses = newArrExpenses.reduce(function(prev, next){return prev + next.amount}, 0);
+            return{
+                ...state,
+                expenses: newArrExpenses,
+                totalExpenses: totalExpenses
             }
         default:
             return state;

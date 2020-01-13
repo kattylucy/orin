@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import Header from './VerticalDashboard';
-import ModalExpenses from './ModalExpenses';
 import { connect } from 'react-redux';
+import { Modal, ModalHeader, ModalBody} from 'reactstrap';
+import * as actionCreators from '../redux/actions/actionsCreators';
 
 
-function AddItem({expenses}){
+
+
+function AddItem(props){
     return(
-        expenses.map(item => {
+        props.expenses.map(item => {
             return(
                 <div className="item-container d-flex justify-content-between pt-4 px-3" key={item.id}>
                     <div className="d-flex flex-row">      
-                        <i className="fa fa-trash mr-3" aria-hidden="true" />
+                    <i onClick={()=>props.deleteItemExpenses(item.id)}className="fa fa-trash mr-3" aria-hidden="true" />
                         <p>{item.name}</p>
                     </div>
                     <p>${item.amount}</p>
@@ -26,21 +29,28 @@ class OtherExpenses extends Component{
         super(props);
 
         this.state={
-            open: false
+            open: false,
+            name:'',
+            amount:''
         }
     }
 
-   toggleModal = () => {
-       this.setState({
-           open: !this.state.open
-       })
-    }
-
+    toggleModal = () => {
+        this.setState({
+            open: !this.state.open
+        })
+     };
+ 
+     handleSubmit(e){
+         e.preventDefault();
+         const amount = parseFloat(this.state.amount);
+         this.toggleModal();
+         this.props.addToExpenses(this.state.name, amount)
+     };
     render(){
 
         return(
             <React.Fragment>
-                <ModalExpenses open={this.state.open} toggle={this.toggleModal}/>
                 <div className="row">
                     <Header />
                     <div className="col-9 col-md-10">
@@ -57,11 +67,28 @@ class OtherExpenses extends Component{
                     </div>
                     <div className="gray-container mr-3">
                         <div>
-                            <AddItem expenses={this.props.expenses} />
+                            <AddItem expenses={this.props.expenses} deleteItemExpenses={this.props.deleteItemExpenses} />
                         </div>
                     </div>             
                     </div>
                 </div>
+
+                <Modal isOpen={this.state.open} toggle={this.toggleModal}>
+                <ModalHeader toggle={this.toggleModal}>Add New Bill</ModalHeader>
+                    <ModalBody>
+                        <form onSubmit={(e)=> this.handleSubmit(e)}>
+                            <div className="form-group">
+                                <label htmlFor="itemName">Item Name</label>
+                                <input id="itemName" type="text"  className="form-control" onChange={(e) => this.setState({name:e.target.value})} />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="itemAmount">Item Amount</label>
+                                <input id="itemAmount" type="number" className="form-control" onChange={(e) => this.setState({amount:e.target.value})}/>
+                            </div>
+                            <button type="submit" className="btn">Add New</button>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </React.Fragment>
         );
     }
@@ -71,18 +98,23 @@ class OtherExpenses extends Component{
 
 const mapStateToProps = state => {
     return{
-        input: state.inputValue,
-        categoryval: state.categoryValue,
         expenses:state.expenses,
         totalExpenses: state.totalExpenses
     };
 };
 
+
 const mapDispatchToProps = dispatch => {
     return{
-        
+        deleteItemExpenses: (id) => {
+            dispatch(actionCreators.deleteItemExpenses(id))
+        },
+        addToExpenses:(name, amount) => {
+            dispatch(actionCreators.expenses(name, amount))
+        }
     };
   };
+
 
 
 

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Header from './VerticalDashboard';
-import ModalIncome from './ModalIncome';
 import { connect } from 'react-redux';
+import { Modal, ModalHeader, ModalBody, Button} from 'reactstrap';
 import * as actionCreators from '../redux/actions/actionsCreators';
+
 
 
 function AddItem(props){
@@ -27,7 +28,9 @@ class Income extends Component{
         super(props);
 
         this.state={
-            open: false
+            open: false,
+            name:'',
+            amount:''
         }
     }
 
@@ -35,13 +38,19 @@ class Income extends Component{
        this.setState({
            open: !this.state.open
        })
-    }
+    };
+
+    handleSubmit(e){
+        e.preventDefault();
+        const amount = parseFloat(this.state.amount);
+        this.toggleModal();
+        this.props.addToIncome(this.state.name, amount)
+    };
 
     render(){
 
         return(
             <React.Fragment>
-                <ModalIncome open={this.state.open} toggle={this.toggleModal}/>
                 <div className="row">
                     <Header />
                     <div className="col-9 col-md-10">
@@ -63,27 +72,44 @@ class Income extends Component{
                     </div>             
                     </div>
                 </div>
+
+                <Modal isOpen={this.state.open} toggle={this.toggleModal}>
+                    <ModalHeader toggle={this.toggleModal}>Add New Income Item</ModalHeader>
+                    <ModalBody>
+                        <form onSubmit={value => this.handleSubmit(value)}>
+                            <div className="form-group">
+                                <label htmlFor="itemName">Item Name</label>
+                                <input id="itemName" type="text" className="form-control" onChange={(e)=>this.setState({name:e.target.value})} />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="itemAmount">Item Amount</label>
+                                <input id="itemAmount" type="text" className="form-control" onChange={(e)=>this.setState({amount:e.target.value})}/>
+                            </div>
+                            <Button type="submit" className="btn">Add New</Button>
+                        </form>
+                    </ModalBody>
+                </Modal>
             </React.Fragment>
         );
     }
 }
 
-    
 
 const mapStateToProps = state => {
     return{
-        input: state.inputValue,
         income: state.income,
-        savings: state.savings,
-        categoryval: state.categoryValue,
         totalIncome: state.totalIncome
     };
 };
+
 
 const mapDispatchToProps = dispatch => {
     return{
         deleteItemIncome: (id) => {
             dispatch(actionCreators.deleteItemIncome(id))
+        },
+        addToIncome:(name, amount) => {
+            dispatch(actionCreators.income(name, amount))
         }
     };
   };

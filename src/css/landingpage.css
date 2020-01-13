@@ -27,6 +27,11 @@
     color: white;
     font-family: var(--main-font);
 }
+
+.navbar h1{
+    color: white;
+    font-family: var(--main-font);
+}
 .nav-brand a:hover,
 .nav-items a:hover{
     text-decoration: none;
@@ -40,12 +45,14 @@
     background-color: #EEAA7B;
     padding: 15px;
     border-radius: 10px;
+    border-color: transparent;
 }
 .button{
     align-self: center;
 }
 .navbar{
     background-color: rgba(7, 135, 155, 0.767);
+    padding: 2rem 2rem;
 }
 .banner{
     background-color: rgba(7, 135, 155, 0.767);
