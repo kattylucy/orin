@@ -1,0 +1,144 @@
+:root{
+    --main-font:"Arial Rounded MT Bold";
+    --secondary-font: "AppleGothic";
+  
+    --orange: #EEAA7B;
+    --dark-blue: #07889B;
+    --light-blue: #66B9BF;
+  }
+
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+
+  /***********
+  ************** MOBILE DESGIN
+  *****************/
+
+
+.nav-brand a{
+    color: white;
+    font-family: var(--main-font);
+}
+.nav-brand a:hover,
+.nav-items a:hover{
+    text-decoration: none;
+}
+
+.nav-items a{
+    color: white;
+    margin-right: 20px;
+}
+.btn-sign-up{
+    background-color: #EEAA7B;
+    padding: 15px;
+    border-radius: 10px;
+}
+.button{
+    align-self: center;
+}
+.navbar{
+    background-color: rgba(7, 135, 155, 0.767);
+}
+.banner{
+    background-color: rgba(7, 135, 155, 0.767);
+    color: white;
+    font-family: var(--secondary-font);
+    padding: 50px 10px;
+    text-align: center;
+}
+.banner-img{
+    display: none;
+}
+.banner-btn{
+    width: 50%;
+}
+.banner-btn a,
+.link-sign-in{
+    color: white;
+}
+.whiteRow{
+    background-color: white;
+    text-align: center;
+    padding: 100px 0px;
+}
+.grayRow img{
+    width: 100%;
+}
+.keeptrack h5{
+    font-family: var(--main-font);
+}
+.trackbtn{
+    color: white;
+}
+.pricing{
+    background-color: rgba(216, 216, 216, 0.308);
+    padding: 100px 0px;
+}
+.arrow::before{
+    content: url('../images/arrow.svg');
+}
+.pricing div h1{
+    font-family: var(--main-font);
+}
+.footerLogo a{
+    color: white;
+    font-family: var(--main-font);
+}
+footer{
+    padding: 50px 0px;
+    background-color:rgba(7, 135, 155, 0.767);
+}
+
+footer div h3{
+    font-family: var(--main-font);
+    color: white;
+}
+.font-awesome-footer, 
+footer div p,
+footer ul a{
+    color: white;
+}
+.font-awesome-footer .fa{
+    margin-right: 5px;
+}
+.sign-in-left img{
+    display: none;
+}
+.signinpage{
+    background-color:  rgba(216, 216, 216, 0.308);
+    height: 100vh;
+}
+.signinlogo a{
+    color:  rgba(7, 135, 155, 0.767);
+    font-family: "Arial Rounded MT Bold";
+}
+
+
+@media only screen and (min-width: 600px) {
+    .banner{
+        padding: 9rem 3rem;
+        text-align: left;
+    }
+    .banner-img{
+        display: block;
+        width: 100%;
+        margin-top: -40px;
+    }
+    .sign-in-left img{
+        display: block;
+        width: 100%;
+        background-color:  rgba(7, 135, 155, 0.767);
+        height: 100vh
+    }
+    .sign-in-right{
+        margin-top: 15%;
+    }
+  }

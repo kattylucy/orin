@@ -1,0 +1,162 @@
+:root{
+    --main-font:"Arial Rounded MT Bold";
+    --secondary-font: "AppleGothic";
+  }
+
+ i .fa:hover{
+   cursor: pointer;
+ }
+ .dashboard-nav{
+     height: 10vh;
+     box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+ }
+ .dashboard-nav i,
+ .dashboard-nav p{
+     color: #363A4F;
+ }
+
+ .balance-dashboard h1,
+ .balance-dashboard p{
+     color:  #363A4F;
+ }
+ .balance-dashboard h1{
+    font-family: var(--main-font);
+ }
+ .balance-dashboard p{
+     font-family: var(--secondary-font);
+ }
+ .card-total{
+     background-color: rgb(230, 230, 230);
+     border-radius: 10px;
+     padding: 20px;
+     margin-bottom: 20px;
+     margin: 5px 40px;
+ }
+ .card-total h3{
+     text-align: center;
+     font-family: var(--main-font);
+     color: #363A4F;
+ }
+ .card-total p{
+     text-align: center;
+     font-family: var(--secondary-font);
+     color: #363A4F;
+ }
+
+
+ .blue-dashboard{
+     background-color: #363A4F;
+     height: 100vh;
+ }
+.blue-dashboard a{
+    color: white;
+    font-size: 20px;
+    font-family: var(--secondary-font);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.blue-dashboard a:hover{
+    text-decoration: none;
+}
+.add-new{
+    margin-top: 1em;
+    color: #363A4F;
+    font-family: var(--secondary-font);
+}
+.add-new h5:hover{
+    cursor: pointer;
+}
+
+  .orin-app-body{
+      background-color:  rgba(216, 216, 216, 0.308);
+      height: 100vh;
+  }
+  /* JUMBOTRON */
+  
+  .container h1,
+  .container p{
+    color: white;
+    font-family: var(--main-font);
+  }
+  .addBtn,
+  .deleteBtn{
+    background-color: var(--add-btn);
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    font-size: 1em;
+    border-color: transparent;
+    color: white;
+  }
+  .deleteBtn{
+    background-color: var(--delete-btn);
+  }
+  .modalHeader{
+    background-color: var(--main-green);
+    color: white;
+    font-family: var(--main-font);
+  }
+  ul li{
+    list-style: none;
+  }
+  .homepage{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.781);
+    margin: 15% 30%;
+    padding: 50px 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .homepage form{
+    display: flex;
+    flex-direction: column;
+  }
+  .homepage input{
+    margin: 0px 30%;
+  }
+  
+  .link{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+  }
+  .link:hover{
+    text-decoration: none;
+  }
+  .headings{
+    font-family: var(--main-font);
+    color:#363A4F;
+  }
+  .item-container p{
+    color:#363A4F;
+    font-family: var(--secondary-font);
+  }
+  .item-container{
+    font-size: 1.2rem;
+
+  }
+  .gray-container{
+    background-color:  rgba(216, 216, 216, 0.308);
+    border-radius: 10px;
+    box-shadow:  0 2px 2px -2px rgba(0,0,0,.2);
+  }
+
+  @media only screen and (min-width: 700px) {
+
+    .card-total{
+        margin-top: 3em;
+    }
+    .add-new{
+        justify-content: flex-end;
+        padding-right: 1em;
+    }
+
+  }
+  
+  
+  
+  
+  
+  

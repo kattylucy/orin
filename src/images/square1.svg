@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="362px" height="379px" viewBox="0 0 362 379" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-11.7%" y="-7.3%" width="123.5%" height="121.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.933333333   0 0 0 0 0.666666667   0 0 0 0 0.482352941  0 0 0 1 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-2" x="0" y="0" width="298" height="330" rx="28"></rect>
+        <filter x="-13.4%" y="-8.8%" width="126.8%" height="124.2%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="11" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="11.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.181900131 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="square-1" filter="url(#filter-1)" transform="translate(31.000000, 28.000000)">
+            <g id="Rectangle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+            <g id="NoTasks" transform="translate(62.000000, 40.000000)">
+                <path d="M134.94,28.35 C137.615267,28.35 139.784,29.760303 139.784,31.5 C139.784,33.239697 137.615267,34.65 134.94,34.65 L107.26,34.65 C109.935267,34.65 112.104,36.060303 112.104,37.8 C112.104,39.539697 109.935267,40.95 107.26,40.95 L122.484,40.95 C125.159267,40.95 127.328,42.360303 127.328,44.1 C127.328,45.839697 125.159267,47.25 122.484,47.25 L115.443652,47.25 C112.070489,47.25 109.336,48.660303 109.336,50.4 C109.336,51.559798 110.72,52.609798 113.488,53.55 C116.163267,53.55 118.332,54.960303 118.332,56.7 C118.332,58.439697 116.163267,59.85 113.488,59.85 L56.052,59.85 C53.3767327,59.85 51.208,58.439697 51.208,56.7 C51.208,54.960303 53.3767327,53.55 56.052,53.55 L29.064,53.55 C26.3887327,53.55 24.22,52.139697 24.22,50.4 C24.22,48.660303 26.3887327,47.25 29.064,47.25 L56.744,47.25 C59.4192673,47.25 61.588,45.839697 61.588,44.1 C61.588,42.360303 59.4192673,40.95 56.744,40.95 L39.444,40.95 C36.7687327,40.95 34.6,39.539697 34.6,37.8 C34.6,36.060303 36.7687327,34.65 39.444,34.65 L67.124,34.65 C64.4487327,34.65 62.28,33.239697 62.28,31.5 C62.28,29.760303 64.4487327,28.35 67.124,28.35 L134.94,28.35 Z M134.94,40.95 C137.615267,40.95 139.784,42.360303 139.784,44.1 C139.784,45.839697 137.615267,47.25 134.94,47.25 C132.264733,47.25 130.096,45.839697 130.096,44.1 C130.096,42.360303 132.264733,40.95 134.94,40.95 Z" id="Background" fill-opacity="0.2" fill="#66B9BF" fill-rule="evenodd"></path>
+                <path d="M70.9856214,63.0431578 C70.9833324,63.0415019 70.9810616,63.0399425 70.9788126,63.03848 C70.9853148,63.0427084 70.9930282,63.046935 71.0018549,63.0510806 Z M71.142,63.0899799 C71.1823175,63.0962191 71.2275284,63.1 71.276,63.1 L102.416,63.1 C102.464472,63.1 102.509682,63.0962191 102.55,63.0899799 L102.55,36 C102.55,35.8372886 101.954436,35.45 101.032,35.45 L72.66,35.45 C71.7375638,35.45 71.142,35.8372886 71.142,36 L71.142,41.7824772 L69.8637541,41.7535857 C69.758068,41.7511969 69.6521414,41.75 69.546,41.75 C64.2394227,41.75 60.07,44.7237165 60.07,48.15 C60.07,51.5762835 64.2394227,54.55 69.546,54.55 C69.6521414,54.55 69.758068,54.5488031 69.8637541,54.5464143 L71.142,54.5175228 L71.142,63.0899799 Z M69.9571265,53.2143068 C69.8206618,53.2214264 69.6835689,53.225 69.546,53.225 C66.1533565,53.225 63.2905333,51.0373321 63.2905333,48.15 C63.2905333,45.2626679 66.1533565,43.075 69.546,43.075 C69.6835689,43.075 69.8206618,43.0785736 69.9571265,43.0856932 L71.142,43.1475105 L71.142,53.1524895 L69.9571265,53.2143068 Z" id="Shape" stroke="#07889B" stroke-width="2.5" fill="#FFFFFF" fill-rule="evenodd"></path>
+                <path d="M97.572,49.1317383 L97.572,51.2661621 M97.572,38.3317383 L97.572,46.575" id="line" stroke="#A4C3FE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M46.4525273,61.25 L51.208,61.25 M125.340527,61.25 L127.328,61.25 M106.568,61.25 L122.087992,61.25 M55.36,61.25 L70.2062383,61.25" id="ground_line" stroke="#07889B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M88.576,15.75 C86.7306667,17.6460938 85.808,19.2960938 85.808,20.7 C85.808,23.2002686 89.0284355,24.3199951 89.0284355,27.0283447 C89.0284355,28.4029541 87.954957,29.7678223 85.808,31.1229492" id="line" stroke="#07889B" stroke-width="2.5" stroke-linecap="round"></path>
+                <path d="M80.272,20.7 C79.6681895,23.1807129 82.348,23.6394967 82.348,25.8635613 C82.348,26.9923742 81.656,28.1211871 80.272,29.25" id="line" stroke="#07889B" stroke-width="2.5" stroke-linecap="round"></path>
+                <path d="M93.2782549,19.5633545 C92.3640918,21.1019897 92.8776695,22.0398305 93.2782549,22.5918457 C94.1345055,23.7717773 95.496,24.7903198 95.496,25.9910156 C95.496,27.3855469 94.7567516,28.7276367 93.2782549,30.0172852" id="line" stroke="#07889B" stroke-width="2.5" stroke-linecap="round"></path>
+            </g>
+            <text id="Budget-Made-Simple-Y" font-family="AvenirNext-Bold, Avenir Next" font-size="20" font-weight="bold" fill="#4A4A4A">
+                <tspan x="46.5" y="165">Budget Made Simple</tspan>
+                <tspan x="148.5" y="192"></tspan>
+                <tspan x="25.8" y="219" font-family="AvenirNext-Regular, Avenir Next" font-weight="normal">You would be able to build </tspan>
+                <tspan x="39.95" y="246" font-family="AvenirNext-Regular, Avenir Next" font-weight="normal">your budget in minutes, </tspan>
+                <tspan x="96.84" y="273" font-family="AvenirNext-Regular, Avenir Next" font-weight="normal">bye stress!!</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
