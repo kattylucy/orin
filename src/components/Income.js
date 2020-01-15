@@ -11,12 +11,12 @@ function AddItem(props){
     return(
         props.income.map(item => {
             return(
-                <div className="item-container d-flex justify-content-between pt-4 px-3" key={item.id}>
+                <div className="d-flex justify-content-between pt-4 px-3 mb-3 gray-container" key={item.id}>
                     <div className="d-flex flex-row">      
                         <i onClick={() => props.deleteItemIncome(item.id)} className="fa fa-trash mr-3" aria-hidden="true" />
                         <p>{item.name}</p>
                     </div>
-                    <p>${item.amount}</p>
+                    <p>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.amount)}</p>
                 </div>
             );
         })
@@ -31,7 +31,7 @@ class Income extends Component{
         this.state={
             open: false,
             name:'',
-            amount:''
+            amount:null
         }
     }
 
@@ -40,12 +40,13 @@ class Income extends Component{
            open: !this.state.open
        })
     };
-
+    
     handleSubmit(e){
         e.preventDefault();
-        const amount = parseFloat(this.state.amount);      
+        const amount = parseFloat(this.state.amount);
         this.toggleModal();
-        this.props.addToIncome(this.state.name, amount)
+        this.props.addToIncome(this.state.name, amount);
+
     };
 
     render(){
@@ -57,16 +58,14 @@ class Income extends Component{
                     <div className="col-9 col-md-10">
                        <DropDown></DropDown>
                     <div className="text-center balance-dashboard mt-3">
-                        <h1>${this.props.totalIncome}</h1>
+                        <h1>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.props.totalIncome)}</h1>
                         <p>Your Total Income</p>
                     </div>
                     <div className="mr-5 add-new">
                         <h5 onClick={this.toggleModal}><i className="fas fa-plus mr-2"/>Add New Item</h5>
                     </div>
-                    <div className="gray-container mr-3">
-                        <div>
-                            <AddItem income={this.props.income} deleteItemIncome={this.props.deleteItemIncome}/>
-                        </div>
+                    <div className="mr-3">
+                        <AddItem income={this.props.income} deleteItemIncome={this.props.deleteItemIncome}/>
                     </div>             
                     </div>
                 </div>

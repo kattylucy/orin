@@ -6,10 +6,10 @@ const initialState = {
     bills:[],
     expenses:[],
     totalIncome:0,
-    totalSavings:0,
-    totalBills: 0,
-    totalExpenses:0,
-    joinExpenses:0,
+    totalSavings: null,
+    totalBills: null,
+    totalExpenses:null,
+    joinExpenses:null,
 }
 
 
@@ -18,6 +18,7 @@ const reducer = (state = initialState, action) => {
     switch(action.type){
         case actionTypes.ADD_TO_INCOME:
             const income = action.payload;
+            console.log(income)
             return{
                 ...state,
                 income: state.income.concat(income),
@@ -62,7 +63,8 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 bills: newArrBills,
-                totalBills: totalBills
+                totalBills: totalBills,
+                joinExpenses: totalBills + state.totalExpenses
             }
         case actionTypes.DELETE_ITEM_SAVINGS:
                 const newArrSavings = state.savings.filter(item => item.id !== action.value);
@@ -78,7 +80,8 @@ const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 expenses: newArrExpenses,
-                totalExpenses: totalExpenses
+                totalExpenses: totalExpenses,
+                joinExpenses: totalExpenses + state.totalBills
             }
         default:
             return state;

@@ -144,18 +144,16 @@
     font-family: var(--main-font);
     color:#363A4F;
   }
-  .item-container p{
+  .gray-container p{
     color:#363A4F;
     font-family: var(--secondary-font);
   }
-  .item-container{
-    font-size: 1.2rem;
 
-  }
   .gray-container{
     background-color:  rgba(216, 216, 216, 0.308);
     border-radius: 10px;
     box-shadow:  0 2px 2px -2px rgba(0,0,0,.2);
+    font-size: 1.2rem;
   }
 
   .orinapp{

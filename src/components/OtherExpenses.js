@@ -17,7 +17,7 @@ function AddItem(props){
                     <i onClick={()=>props.deleteItemExpenses(item.id)}className="fa fa-trash mr-3" aria-hidden="true" />
                         <p>{item.name}</p>
                     </div>
-                    <p>${item.amount}</p>
+                    <p>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(item.amount)}</p>
                 </div>
             );
         })
@@ -57,7 +57,7 @@ class OtherExpenses extends Component{
                     <div className="col-9 col-md-10">
                         <DropDown></DropDown>
                     <div className="text-center balance-dashboard mt-3">
-                        <h1>${this.props.totalExpenses}</h1>
+                        <h1>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(this.props.totalExpenses)}</h1>
                         <p>Your Total Expenses</p>
                     </div>
                     <div className="mr-5 add-new">
