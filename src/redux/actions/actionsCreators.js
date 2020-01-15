@@ -11,7 +11,7 @@ export const savings = (name, amount) => dispatch => {
     const incomePayload = {
         name,
         amount,
-        id: name.length
+        id: name
     }
     setTimeout(() => {
         dispatch(addToSavings(incomePayload));
@@ -41,7 +41,7 @@ export const income = (name, amount) => dispatch => {
     const incomePayload = {
         name,
         amount,
-        id: name.length
+        id: name
     }
     setTimeout(() => {
         dispatch(addToIncome(incomePayload));
@@ -70,7 +70,7 @@ export const bills = (name, amount) => dispatch => {
     const billsPayload = {
         name,
         amount,
-        id: name.length
+        id: name
     }
     setTimeout(() => {
         dispatch(addToBills(billsPayload));
@@ -101,7 +101,7 @@ export const expenses = (name, amount) => dispatch => {
     const expensesPayload = {
         name,
         amount,
-        id: name.length
+        id: name
     }
     setTimeout(() => {
         dispatch(addToExpenses(expensesPayload));

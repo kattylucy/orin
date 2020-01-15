@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './VerticalDashboard';
 import { connect } from 'react-redux';
-import { Modal, ModalHeader, ModalBody, Button} from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Button, Alert} from 'reactstrap';
 import * as actionCreators from '../redux/actions/actionsCreators';
 import DropDown from './Dropdown';
 
@@ -31,7 +31,8 @@ class Income extends Component{
         this.state={
             open: false,
             name:'',
-            amount:null
+            amount:null,
+            alertVisible: false
         }
     }
 
@@ -43,9 +44,16 @@ class Income extends Component{
     
     handleSubmit(e){
         e.preventDefault();
+        const arr = this.props.income.map(item => item.name)
         const amount = parseFloat(this.state.amount);
-        this.toggleModal();
-        this.props.addToIncome(this.state.name, amount);
+
+        if(arr.includes(this.state.name)){
+            this.setState({alertVisible:!this.state.alertVisible});
+        }else{
+            this.setState({name:this.state.name, alertVisible:false});
+            this.props.addToIncome(this.state.name.toLocaleLowerCase(), amount);
+            this.toggleModal();
+        }
 
     };
 
@@ -78,6 +86,9 @@ class Income extends Component{
                                 <label htmlFor="itemName">Item Name</label>
                                 <input id="itemName" type="text" className="form-control" onChange={(e)=>this.setState({name:e.target.value})} />
                             </div>
+                            <Alert color="danger" isOpen={this.state.alertVisible}>
+                                Sorry, an item with the same name already exist, try changing the name
+                            </Alert>
                             <div className="form-group">
                                 <label htmlFor="itemAmount">Item Amount</label>
                                 <input id="itemAmount" type="text" className="form-control" onChange={(e)=>this.setState({amount:e.target.value})}/>

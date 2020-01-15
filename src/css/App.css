@@ -176,6 +176,10 @@
     margin-right: 10px;
   }
 
+  .alert-danger{
+    font-size: 12px;
+  }
+
 
   @media only screen and (min-width: 700px) {
 
