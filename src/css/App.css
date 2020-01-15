@@ -38,6 +38,17 @@
      color:#363A4F;
      font-size: 1.2em;
  }
+ .card-total h3:first-child::before{
+   content: url(../images/smile.svg);
+   font-size: 10px;
+   margin-right: 10px;
+ }
+ .card-total:nth-child(2) h3::before{
+   content: url("../images/business-and-finance.svg");
+ }
+ .card-total:nth-child(3) h3::before{
+   content: url("../images/sad.svg");
+ }
  .card-total p{
      text-align: center;
      font-family: var(--secondary-font);
