@@ -19,7 +19,7 @@ function VerticalDash(){
                 <Link to='/orinapp'><img src={dashboard} className="icons-dashboard" />Dashboard</Link>
                 <Link to='/income'><img src={money} className="icons-dashboard" />Income</Link>
                 <Link to='/Savings'><img src={save} className="icons-dashboard" />Savings</Link>
-                <Link to='/bills'><img src={pay} className="icons-dashboard" />Recurrent Expenses</Link>
+                <Link to='/bills'><img src={pay} className="icons-dashboard" />Recurring Expenses</Link>
                 <Link to='/expenses'><img src={gift} className="icons-dashboard" />Other Expenses</Link>
             </div>
         </div>

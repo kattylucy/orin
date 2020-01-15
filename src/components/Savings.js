@@ -49,7 +49,7 @@ class Savings extends Component{
          if(arr.includes(this.state.name)){
             this.setState({alertVisible:!this.state.alertVisible})
          }else{
-            this.props.addToSavings(this.state.name, amount);
+            this.props.addToSavings(this.state.name.toLowerCase(), amount);
             this.setState({name:this.state.name, alertVisible:false});
             this.toggleModal();
          }

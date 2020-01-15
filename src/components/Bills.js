@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './VerticalDashboard';
 import { connect } from 'react-redux';
 import * as actionCreators from '../redux/actions/actionsCreators';
-import { Modal, ModalHeader, ModalBody} from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Alert} from 'reactstrap';
 import DropDown from './Dropdown';
 
 
@@ -30,7 +30,8 @@ class Bills extends Component{
         this.state={
             open: false,
             name:'',
-            amount:''
+            amount:'',
+            alertVisible: false
         }
     }
 
@@ -42,9 +43,16 @@ class Bills extends Component{
  
      handleSubmit(e){
          e.preventDefault();
+         const arr = this.props.bills.map(item => item.name)
          const amount = parseFloat(this.state.amount);
-         this.toggleModal();
-         this.props.addToBills(this.state.name, amount)
+
+         if(arr.includes(this.state.name)){
+            this.setState({alertVisible:!this.state.alertVisible})
+         }else{
+            this.props.addToBills(this.state.name.toLowerCase(), amount);
+            this.setState({name:this.state.name, alertVisible:false});
+            this.toggleModal();
+         }
      };
  
 
@@ -79,6 +87,9 @@ class Bills extends Component{
                                 <label htmlFor="itemName">Item Name</label>
                                 <input id="itemName" type="text"  className="form-control" onChange={(e) => this.setState({name:e.target.value})} />
                             </div>
+                            <Alert color="danger" isOpen={this.state.alertVisible}>
+                                Sorry, an item with the same name already exist, try changing the name
+                            </Alert>
                             <div className="form-group">
                                 <label htmlFor="itemAmount">Item Amount</label>
                                 <input id="itemAmount" type="number" className="form-control" onChange={(e) => this.setState({amount:e.target.value})}/>
