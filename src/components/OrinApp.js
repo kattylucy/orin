@@ -9,11 +9,7 @@ class App extends Component{
   
   render(){    
     return(
-      <React.Fragment>
         <HeaderDashboard />
-     </React.Fragment>
-
-
     )
   };
 }

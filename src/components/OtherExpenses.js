@@ -3,6 +3,7 @@ import Header from './VerticalDashboard';
 import { connect } from 'react-redux';
 import { Modal, ModalHeader, ModalBody} from 'reactstrap';
 import * as actionCreators from '../redux/actions/actionsCreators';
+import DropDown from './Dropdown';
 
 
 
@@ -54,10 +55,7 @@ class OtherExpenses extends Component{
                 <div className="row">
                     <Header />
                     <div className="col-9 col-md-10">
-                        <div className="dashboard-nav justify-content-end d-flex pt-3 pr-2">
-                            <i className="fa fa-2x fa-user mr-2"/>
-                            <p className="mr-2 mt-1">Katty Barroso</p>
-                        </div>  
+                        <DropDown></DropDown>
                     <div className="text-center balance-dashboard mt-3">
                         <h1>${this.props.totalExpenses}</h1>
                         <p>Your Total Expenses</p>
@@ -85,7 +83,7 @@ class OtherExpenses extends Component{
                                 <label htmlFor="itemAmount">Item Amount</label>
                                 <input id="itemAmount" type="number" className="form-control" onChange={(e) => this.setState({amount:e.target.value})}/>
                             </div>
-                            <button type="submit" className="btn">Add New</button>
+                            <button type="submit" className="btn btn-primary">Add New</button>
                         </form>
                     </ModalBody>
                 </Modal>

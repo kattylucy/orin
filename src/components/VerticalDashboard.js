@@ -1,14 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import money from '../images/money.svg';
+import dashboard from '../images/dashboard.svg';
+import save from '../images/save.svg';
+import pay from '../images/pay.svg';
+import gift from '../images/gift.svg';
+
+
+
 
 function VerticalDash(){
     return(
-        <div className="col-3 col-md-2 blue-dashboard d-flex flex-column justify-content-center">
-            <Link to='/orinapp'><i className="fas fa-home mr-2"/>Dashboard</Link>
-            <Link to='/income'><i className="fa fa-plus mr-2" />Income</Link>
-            <Link to='/Savings'><i className="fas fa-piggy-bank mr-2" />Savings</Link>
-            <Link to='/bills'><i className="fa fa-credit-card mr-2" />Bills</Link>
-            <Link to='/expenses'><i className="fas fa-gifts mr-2" />Expenses</Link>   
+        <div className="col-3 col-md-2 blue-dashboard d-flex flex-column">
+            <div className="dashboard-logo">
+                <Link to='/app'>Orin</Link>
+            </div>
+            <div className="d-flex flex-column">
+                <Link to='/orinapp'><img src={dashboard} className="icons-dashboard" />Dashboard</Link>
+                <Link to='/income'><img src={money} className="icons-dashboard" />Income</Link>
+                <Link to='/Savings'><img src={save} className="icons-dashboard" />Savings</Link>
+                <Link to='/bills'><img src={pay} className="icons-dashboard" />Recurrent Expenses</Link>
+                <Link to='/expenses'><img src={gift} className="icons-dashboard" />Other Expenses</Link>
+            </div>
         </div>
     );
 

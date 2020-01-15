@@ -9,7 +9,7 @@ const initialState = {
     totalSavings:0,
     totalBills: 0,
     totalExpenses:0,
-    totalMoney:0,
+    joinExpenses:0,
 }
 
 
@@ -32,17 +32,21 @@ const reducer = (state = initialState, action) => {
             }
         case actionTypes.ADD_TO_BILLS:
              const bills = action.payload;
+             const tbills = bills.amount + state.bills.reduce(function(prev, next){return prev + next.amount}, 0);
             return{
                 ...state,
                 bills: state.bills.concat(bills),
-                totalBills: bills.amount + state.bills.reduce(function(prev, next){return prev + next.amount}, 0),
+                totalBills: tbills,
+                joinExpenses: tbills + state.totalExpenses
             }
         case actionTypes.ADD_TO_EXPENSES:
             const expenses = action.payload;
+            const tExpenses = expenses.amount + state.expenses.reduce(function(prev, next){return prev + next.amount}, 0);
             return{
                 ...state,
                 expenses: state.expenses.concat(expenses),
-                totalExpenses: expenses.amount + state.expenses.reduce(function(prev, next){return prev + next.amount}, 0),
+                totalExpenses: tExpenses,
+                joinExpenses: state.totalBills + tExpenses
             }
         case actionTypes.DELETE_ITEM_INCOME:
             const newArrIncome = state.income.filter(item => item.id !== action.value);

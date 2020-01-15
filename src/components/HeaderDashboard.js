@@ -1,22 +1,25 @@
 import React from 'react';
 import VerticalDash from './VerticalDashboard';
 import { connect } from 'react-redux';
+import { UncontrolledTooltip } from 'reactstrap';
+import DropDown from './Dropdown';
 
 
 
 function HeaderDashboard(props){
+
     return(
         <React.Fragment>
             <div className="row">
                 <VerticalDash />
                 <div className="col-9 col-md-10">
-                    <div className="dashboard-nav justify-content-end d-flex pt-3 pr-2">
-                        <i className="fa fa-2x fa-user mr-2"/>
-                        <p className="mr-2 mt-1">Katty Barroso</p>                   
-                    </div>
+                    <DropDown></DropDown>
                     <div className="text-center balance-dashboard mt-3">
-                        <h1>${props.totalMoney}</h1>
-                        <p>Your Balance Today</p>
+                        <h1>${props.totalIncome - props.totalSavings - props.joinExpenses}</h1>
+                        <p id="TooltipBalance">Your Balance Today <i class="fas fa-info-circle"></i></p>
+                        <UncontrolledTooltip placement="bottom" target="TooltipBalance">
+                            This Amount is your Cash Avaliable After Savings and Expenses
+                        </UncontrolledTooltip>
                     </div>
                     <div className="row d-flex justify-content-center">
                         <div className="card-total col-md-3">
@@ -32,7 +35,7 @@ function HeaderDashboard(props){
                         <div className="card-total col-md-3">
                             <h3>Expenses</h3>
                             <hr></hr>
-                            <p>$100</p>
+                            <p>${props.joinExpenses}</p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +50,8 @@ const mapStateToProps = state => {
     return{
         totalIncome: state.totalIncome,
         totalSavings: state.totalSavings,
-        totalMoney: state.totalMoney
+        totalMoney: state.totalMoney,
+        joinExpenses: state.joinExpenses
     };
 };
 
