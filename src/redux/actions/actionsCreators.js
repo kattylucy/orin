@@ -122,3 +122,43 @@ export const addToExpenses = (expensesPayload) => {
 };
 
 
+/********************
+********************
+  GOALS
+********************
+*********************/
+
+export const goals = (name, amount, time) => dispatch => {
+    const payload = {
+        name,
+        amount,
+        time,
+        id: name,
+        amountContribute:0,
+        progressValue:0
+    }
+    dispatch(addToGoals(payload))
+};
+
+
+export const addToGoals = (payload) => {
+    return{
+        type: actionTypes.ADD_TO_GOALS,
+        payload: payload
+    };
+};
+
+export const contribute = (id, amountGoal) => dispatch => {
+    const payload = {
+        id,
+        amountGoal
+    }
+    dispatch(addToContribute(payload))
+}
+
+export const addToContribute = (payload) => {
+    return{
+        type: actionTypes.ADD_TO_CONTRIBUTE,
+        payload: payload
+    };
+};

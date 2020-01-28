@@ -1,6 +1,7 @@
 :root{
     --main-font:"Arial Rounded MT Bold";
     --secondary-font: "AppleGothic";
+    --blue: #66B9BF;
   }
 
  i .fa:hover{
@@ -165,6 +166,7 @@
     border-radius: 10px;
     box-shadow:  0 2px 2px -2px rgba(0,0,0,.2);
     font-size: 1.2rem;
+    padding-bottom: 10px;
   }
 
   .orinapp{
@@ -191,7 +193,107 @@
     font-size: 12px;
   }
 
+  .congratulation-goal{
+    background-color: rgba(255, 255, 255, 0.646);
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
 
+  .congratulation-goal img{
+    width: 60px;
+    margin: 10px;
+  }
+  .congratulation-goal p{
+    margin-top: 50px;
+  }
+
+  
+  .goal-form h5{
+    color: #363A4F;
+    font-family: var(--main-font);
+    text-align: center;
+    padding: 20px 0px;
+  }
+
+  .goal-form input{
+    height: 50px;
+  }
+
+  .goal-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .goal-buttons button{
+    padding: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.199);
+    border-radius: 0px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 100px;
+    font-family: var(--secondary-font);
+  }
+
+  .goal-buttons button:nth-child(2){
+    background-color: #66B9BF;
+    color: white;
+  }
+ 
+
+  .goal-name,
+  .goal-description,
+  .form-contribute{
+    color: #363A4F;
+    padding: 15px 30px;
+  }
+  .goals-amount{
+    margin-top: 10px;
+  }
+  
+  .goal-name h5,
+  .form-contribute h5{
+    text-transform: capitalize;
+    margin-top: 19px;
+  }
+  .goals-amount p{
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+  .goals-header img{
+    width: 18px;
+    margin-right: 15px;
+    cursor: pointer;
+    height: 18px;
+    margin-top: 20px;
+  }
+
+  .goal-description p,
+  .goal-description p{
+    font-family: var(--secondary-font);
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .goal-description div:nth-child(2) p:hover{
+    cursor: pointer;
+  }
+
+  .progress{
+    margin: 0px 20px;
+    height: 10px!important;
+  }
+  .contribute-btn{
+    border: 2px solid #66B9BF;
+    border-radius: 5px;
+  }
+  .contribute-btn p{
+    padding: 5px 5px 0px 5px;
+  }
+
+ 
   @media only screen and (min-width: 700px) {
 
     .card-total{

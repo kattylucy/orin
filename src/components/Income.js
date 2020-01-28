@@ -84,7 +84,7 @@ class Income extends Component{
                         <form onSubmit={value => this.handleSubmit(value)}>
                             <div className="form-group">
                                 <label htmlFor="itemName">Item Name</label>
-                                <input id="itemName" type="text" className="form-control" onChange={(e)=>this.setState({name:e.target.value})} />
+                                <input id="itemName" type="text" className="form-control" onChange={(e)=>this.setState({name:e.target.value.toLowerCase()})} />
                             </div>
                             <Alert color="danger" isOpen={this.state.alertVisible}>
                                 Sorry, an item with the same name already exist, try changing the name

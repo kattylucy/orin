@@ -5,6 +5,7 @@ const initialState = {
     savings:[],
     bills:[],
     expenses:[],
+    goals:[],
     totalIncome:0,
     totalSavings: null,
     totalBills: null,
@@ -48,6 +49,24 @@ const reducer = (state = initialState, action) => {
                 expenses: state.expenses.concat(expenses),
                 totalExpenses: tExpenses,
                 joinExpenses: state.totalBills + tExpenses
+            }
+        case actionTypes.ADD_TO_GOALS:
+            return{
+                ...state,
+                goals: state.goals.concat(action.payload)
+            }
+        case actionTypes.ADD_TO_CONTRIBUTE:
+            const filterGoals = state.goals.filter(item => item.id === action.payload.id);
+            const tonumber = Number(action.payload.amountGoal);
+            filterGoals.map(item => {
+                const amountContribute = tonumber + item.amountContribute;
+                return(
+                    item.amountContribute = amountContribute,
+                    item.progressValue = amountContribute / item.amount * 100
+                )
+            });
+            return{
+                ...state
             }
         case actionTypes.DELETE_ITEM_INCOME:
             const newArrIncome = state.income.filter(item => item.id !== action.value);
